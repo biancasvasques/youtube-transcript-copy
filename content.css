@@ -1,0 +1,31 @@
+#tc-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font: 500 13px/1 "Roboto", system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  color: #f5f5f0;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.88;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+#tc-btn.tc-visible { display: inline-flex; }
+#tc-btn:hover { opacity: 1; transform: translateY(-1px); }
+#tc-btn[data-state="busy"] { opacity: 0.6; cursor: progress; }
+#tc-btn[data-state="ok"] { background: #1d3b2a; }
+#tc-btn[data-state="err"] { background: #4a1f1f; }
+#tc-btn .tc-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor; opacity: 0.6;
+}
+@media (max-width: 600px) {
+  #tc-btn { left: 12px; bottom: 12px; padding: 8px 12px; font-size: 12px; }
+}
